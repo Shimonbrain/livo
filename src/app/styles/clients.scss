@@ -1,0 +1,82 @@
+.Client-banner {
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #fff;
+}
+.Client-banner img{
+    max-width: 100%;
+}
+.Clients h2 {
+    color: #061F4A;
+    font-size: 40px;
+    font-family: "Tiempos";
+    letter-spacing: -1px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.Clients .C-logos {
+    padding-bottom: 80px;
+    text-align: center;
+    background-color: #fff;
+}
+.Clients .C-logos img {
+    padding: 20px;
+}
+.Clients .C-sec2 {
+    padding: 60px 0;
+}
+.Clients .C-sec2 .CS2-text1{
+    font-size: 24px;
+    color: #3E5172;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.Clients .C-sec2 .Stories .S-box {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 30px 20px;
+    text-align: center;
+    margin: 6px;
+    height: calc(100% - 12px);
+}
+.Clients .C-sec2 .Stories .S-box .S-icon {
+    padding-bottom: 10px;
+}
+.Clients .C-sec2 .Stories .S-box .S-head {
+    font-size: 24px;
+    color: #3E5172;
+    font-family: "Tiempos";
+    padding: 0 10% 10px 10%;
+}
+.Clients .C-sec2 .Stories .S-box p {
+    color: #64748F;
+    font-size: 16px;
+    padding: 0 10%;
+}
+.Clients .C-sec2 .Stories .S-box .P-sec {
+    border-top: 1px solid #D8DCE3;
+    padding: 25px 0 0 0;
+}
+.Clients .C-sec2 .Stories .S-box .P-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center center;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: sub;
+}
+.Clients .C-sec2 .Stories .S-box .P-name {
+    font-size: 16px;
+    color: #3E5172;
+    text-align: left;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+}
+.Clients .C-sec2 .Stories .S-box .P-name span {
+    color: #8B97AB;
+}

@@ -1,0 +1,419 @@
+.Tele-Pathology-page {
+	padding: 50px 0;
+	.TP-content1 {
+		.TPT1 {
+			color: #FF6567;
+			font-size: 24px;
+			padding-bottom: 8px;
+		}
+		.TPT2 {
+			color: #061F4A;
+			font-size: 18px;
+			padding-bottom: 8px;
+		}
+		h2 {
+			color: #061F4A;
+			font-size: 32px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.TP-get {
+			color: #0870CD;
+			font-size: 16px;
+			i {
+				font-size: 11px;
+			}
+		}
+	}
+	.TP-content2 {
+		padding: 50px 30px 50px 30px;
+		h3 {
+			color: #061F4A;
+			font-size: 24px;
+		}
+		p {
+			color: #3E5172;
+			font-size: 16px;
+		}
+		.TP-points {
+			padding: 15px;
+			img {
+				margin-right: 10px;
+			}
+		}
+	}
+	.TP-content3 {
+		padding: 50px 0;
+		h3 {
+			color: #061F4A;
+			font-size: 32px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			span {
+				color: #FF6567;
+			}
+		}
+		p {
+			font-size: 16px;
+			color: #3E5172;
+		}
+		.TPC-box {
+			background-color: #fff;
+			padding: 30px;
+			margin-bottom: 30px;
+			margin-top: 30px;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			margin: 0;
+			padding: 10px 0 10px 20px;
+			list-style-type: none;
+			color: #061F4A;
+			&:before {
+				content: "\f058";
+				font-family: "Font Awesome 5 Free";
+				display: inline-block;
+				margin-left: -1.3em;
+				width: 1.3em;
+				color: #0870CD;
+			}
+		}
+	}
+	.TP-content4 {
+		position: relative;
+		margin-bottom: 50px;
+		.TPC-content {
+			position: absolute;
+			left: 42%;
+			top: 150px;
+		}
+		h3 {
+			color: #061F4A;
+			font-size: 28px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			span {
+				color: #FF6567;
+			}
+		}
+	}
+	.TP-content4-2 {
+		position: relative;
+		margin-bottom: 50px;
+		margin-left: -15px;
+		margin-right: -15px;
+		.TPC-content {
+			position: absolute;
+			top: 74px;
+			padding: 15px;
+			text-align: center;
+		}
+		h3 {
+			color: #061F4A;
+			font-size: 28px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			span {
+				color: #FF6567;
+			}
+		}
+	}
+	.TP-content5 {
+		margin-bottom: 50px;
+		position: relative;
+		padding: 0 50px;
+		.TP-bg {
+			background-color: #ebe1ea;
+			height: calc(100% - 30px);
+			width: 100%;
+			position: absolute;
+			left: 0px;
+			top: 30px;
+			border-radius: 8px;
+		}
+		h3 {
+			color: #061F4A;
+			font-size: 28px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			padding-bottom: 10px;
+		}
+		p {
+			font-size: 20px;
+			color: #3E5172;
+		}
+	}
+	.TP-content6 {
+		background-color: #fff;
+		padding: 50px 0;
+		h2 {
+			color: #061F4A;
+			font-size: 32px;
+			font-family: "Tiempos";
+			text-align: center;
+			letter-spacing: -1px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			span {
+				color: #FF6567;
+			}
+		}
+		.TPT1 {
+			font-size: 24px;
+			color: #3E5172;
+			text-align: center;
+			padding-bottom: 30px;
+		}
+		.TPbox {
+			border: 1px solid rgba(62, 81, 114, 0.2);
+			padding: 30px;
+			min-height: 100%;
+			h3 {
+				color: #0870CD;
+				font-size: 24px;
+				font-family: "Avenir LT W04_65 Medium1475536";
+				padding-top: 20px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid rgba(8, 112, 205, 0.08);
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				margin: 0;
+				padding: 15px 0 15px 20px;
+				list-style-type: none;
+				color: #061F4A;
+				border-bottom: 1px solid rgba(8, 112, 205, 0.08);
+				&:before {
+					content: "\f058";
+					font-family: "Font Awesome 5 Free";
+					display: inline-block;
+					margin-left: -1.3em;
+					width: 1.3em;
+					color: #0870CD;
+				}
+			}
+			.buybtn {
+				background-color: #0870CD;
+				border-color: #0870CD;
+				color: #fff;
+				line-height: 1;
+				padding: 8px 18px;
+				margin-top: 30px;
+			}
+		}
+	}
+	.TP-content7 {
+		background-color: #fff;
+		border-radius: 8px;
+		padding: 40px 20px 40px 50px;
+		margin-bottom: 50px;
+		h3 {
+			color: #061F4A;
+			font-size: 28px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			span {
+				color: #FF6567;
+			}
+		}
+		.TP7-btn {
+			background-color: #0870CD;
+			border-radius: 4px;
+			color: #fff;
+			margin-top: 20px;
+			i {
+				font-size: 11px;
+			}
+		}
+	}
+}
+
+.button.learn-more {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	background: transparent;
+	padding: 0;
+	font-size: inherit;
+	font-family: inherit;
+	&:hover {
+		.circle {
+			width: 80%;
+			border-radius: 5px;
+			.icon.arrow {
+				background: #fff;
+				transform: translate(1rem, 0);
+				left: 3px;
+			}
+		}
+		.button-text {
+			color: #fff;
+		}
+	}
+}
+.button.learn-more {
+	width: 140px;
+	height: auto;
+	.circle {
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+		position: relative;
+		display: block;
+		margin: 0;
+		width: 32px;
+		height: 32px;
+		background: #0870cd;
+		border-radius: 16px;
+		.icon {
+			transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			background: #fff;
+		}
+		.icon.arrow {
+			transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+			left: 7px;
+			width: 13px;
+			height: 2px;
+			background: none;
+			&::before {
+				position: absolute;
+				content: '';
+				top: -0.2rem;
+				right: 0.05rem;
+				width: 8px;
+				height: 8px;
+				border-top: 2px solid #fff;
+				border-right: 2px solid #fff;
+				transform: rotate(45deg);
+			}
+		}
+	}
+	.button-text {
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 0.25rem 0;
+		color: #0870cd;
+		line-height: 1.6;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.Tele-Pathology-page .TP-content1 .TPT1, .Tele-Pathology-page .TP-content1 h2, .Tele-Pathology-page .TP-content3 h3, .Tele-Pathology-page .TP-content3 p {
+		text-align: center;
+	}
+	.Tele-Pathology-page .TP-content2 {
+		padding: 50px 15px 50px 15px;
+	}
+	.Tele-Pathology-page .TP-content3 .TPC-box {
+		padding: 30px 15px;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.Tele-Pathology-page .TP-content5 {
+		padding: 0 15px;
+		text-align: center;
+	}
+	.Tele-Pathology-page .TP-content5 .TP-bg {
+		height: 100%;
+		top: 0px;
+	}
+	.Tele-Pathology-page .TP-content5 h3 {
+		padding-top: 40px;
+	}
+	.Tele-Pathology-page .TP-content6 .TPbox {
+		border: 0px;
+	}
+	.Tele-Pathology-page .TP-content7 {
+		padding: 40px 20px 40px 20px;
+		margin-left: -15px;
+		margin-right: -15px;
+		text-align: center;
+	}
+	.Tele-Pathology-page .TP-content7 .TP7-btn {
+		margin-bottom: 20px;
+	}
+}
+@media screen and (max-width: 800px) and (min-width: 768px) {
+	.Tele-Pathology-page .TP-content4 .TPC-content {
+		left: 39%;
+		top: 56px;
+	}
+}
+
+.BMHeight{
+	min-height: 410px;
+}
+
+@media only screen and (max-width: 768px) {
+	.BMHeight{
+		min-height: 250px;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.Tele-Pathology-page {
+		.TP-content2 {
+			padding: 1rem;
+			.TP-points {
+				padding: 5px;
+			}
+
+			.TP-points img {
+				width: 24px;
+				height: 24px;
+			}
+
+			.order-2 {
+				padding :1rem;
+			}
+		}
+
+
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.BMHeight{
+		min-height: 150px;
+	}
+
+	.Tele-Pathology-page {
+		.TP-content2 {
+			padding: 1rem;
+			.TP-points {
+				padding: 5px;
+			}
+
+			.TP-points img {
+				width: 20px;
+				height: 20px;
+			}
+
+			.order-2 {
+				padding :1rem;
+			}
+		}
+
+
+	}
+}

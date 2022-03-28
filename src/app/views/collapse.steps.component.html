@@ -1,0 +1,27 @@
+<div [class]="cls" attr.id="accordian-{{cls}}-{{count}}" class="d-block d-sm-none">
+    <div class="container st7">
+        <div class="Howitworks">
+            <h2>How it works</h2>
+            <div *ngIf="data.title">
+                <div class="AH-T1">{{data.title}}</div>
+            </div>
+            <div class="m-steps">
+                <div class="card {{i==0 ? 'active': ''}}" *ngFor="let text of data.texts; let i=index">
+                    <div class="card-header" attr.id="heading-{{count+i}}">
+                            <a data-toggle="collapse"
+                                attr.data-parent="#accordian-{{cls}}-{{count}}" attr.data-target="#collapse-{{count+i}}"
+                                attr.aria-controls="collapse-{{count+i}}"
+                                attr.aria-expanded="{{i==0 ? 'true': 'false'}}" attr.class="{{i==0 ? '' : 'collapsed'}}">
+                                <span class="icon icon{{i+1}}"></span>
+                                <span>{{text}}</span></a>
+
+                    </div>
+                    <div attr.id="collapse-{{count+i}}" attr.class="collapse{{i==0 ? ' show' : ''}}"
+                        attr.aria-labelledby="heading-{{count+i}}" attr.data-parent="#accordian-{{cls}}-{{count}}">
+                        <div class="card-body">{{data.descriptions[i]}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

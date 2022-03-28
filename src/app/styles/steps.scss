@@ -1,0 +1,271 @@
+.Howitworks {
+	background-color: #fff;
+	padding: 50px 30px;
+	margin: 30px 0;
+	h2 {
+		color: #061F4A;
+		font-size: 40px;
+		font-family: "Tiempos";
+		text-align: center;
+		letter-spacing: -1px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.AH-T1 {
+		color: #0870CD;
+		font-size: 24px;
+		text-align: center;
+		padding-bottom: 10px;
+	}
+	.H-Tabs {
+		.nav-link {
+			padding: 30px 15px;
+			font-size: 16px;
+			color: #62718c;
+			text-align: center;
+			height: 100%;
+			border: 1px solid rgb(62 81 114 / 26%);
+			transition: background-color 0.5s ease-out;
+			.icon {
+				width: 32px;
+				height: 32px;
+				margin-bottom: 10px;
+				display: inline-block;
+				background-repeat: no-repeat;
+			}
+		}
+		.nav-link.first-child {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+		.nav-link.last-child {
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		.nav-link.active {
+			background-color: #3e5172;
+			color: #ffffff;
+		}
+	}
+	.H-Tabcontent {
+		padding: 30px;
+		p {
+			color: #3E5172;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+
+	.card {
+		.card-header {
+			a {
+				background-color: #3e5172;
+				color: #ffffff;
+			}
+			a.collapsed{
+				background-color: #fff;
+				color: #3e5172;
+			}
+		}
+	}
+}
+.a1000-page {
+	.Howitworks {
+		.H-Tabs {
+			.nav-item {
+				width: 20%;
+			}
+			.nav-link {
+				.icon1 {
+					background-image: url('../../assets/images/a1000h-icon1.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/a1000h-icon2.svg');
+				}
+				.icon3 {
+					background-image: url('../../assets/images/a1000h-icon3.svg');
+				}
+				.icon4 {
+					background-image: url('../../assets/images/a1000h-icon4.svg');
+				}
+				.icon5 {
+					background-image: url('../../assets/images/a1000h-icon5.svg');
+				}
+			}
+			.nav-link.active {
+				.icon1 {
+					background-image: url('../../assets/images/a1000h-icon1-hover.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/a1000h-icon2-hover.svg');
+				}
+				.icon3 {
+					background-image: url('../../assets/images/a1000h-icon3-hover.svg');
+				}
+				.icon4 {
+					background-image: url('../../assets/images/a1000h-icon4-hover.svg');
+				}
+				.icon5 {
+					background-image: url('../../assets/images/a1000h-icon5-hover.svg');
+				}
+			}
+		}
+
+		.card-header {
+			.icon1 {
+				background-image: url('../../assets/images/a1000h-icon1-hover.svg');
+			}
+			.icon2 {
+				background-image: url('../../assets/images/a1000h-icon2-hover.svg');
+			}
+			.icon3 {
+				background-image: url('../../assets/images/a1000h-icon3-hover.svg');
+			}
+			.icon4 {
+				background-image: url('../../assets/images/a1000h-icon4-hover.svg');
+			}
+			.icon5 {
+				background-image: url('../../assets/images/a1000h-icon5-hover.svg');
+			}
+			.collapsed {
+				.icon1 {
+					background-image: url('../../assets/images/a1000h-icon1.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/a1000h-icon2.svg');
+				}
+				.icon3 {
+					background-image: url('../../assets/images/a1000h-icon3.svg');
+				}
+				.icon4 {
+					background-image: url('../../assets/images/a1000h-icon4.svg');
+				}
+				.icon5 {
+					background-image: url('../../assets/images/a1000h-icon5.svg');
+				}
+			}
+		}
+	}
+}
+.a700-page {
+	.Howitworks {
+		.H-Tabs {
+			.nav-item {
+				width: 33.333%;
+			}
+			.nav-link {
+				.icon1 {
+					background-image: url('../../assets/images/a7h-icon1.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/a7h-icon2.svg');
+				}
+				.icon3 {
+					background-image: url('../../assets/images/a7h-icon3.svg');
+				}
+			}
+			.nav-link.active {
+				.icon1 {
+					background-image: url('../../assets/images/a7h-icon1-hover.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/a7h-icon2-hover.svg');
+				}
+				.icon3 {
+					background-image: url('../../assets/images/a7h-icon3-hover.svg');
+				}
+			}
+		}
+
+		.card-header {
+
+			.icon1 {
+				background-image: url('../../assets/images/a7h-icon1-hover.svg');
+			}
+			.icon2 {
+				background-image: url('../../assets/images/a7h-icon2-hover.svg');
+			}
+			.icon3 {
+				background-image: url('../../assets/images/a7h-icon3-hover.svg');
+			}
+			.collapsed {
+				.icon1 {
+					background-image: url('../../assets/images/a7h-icon1.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/a7h-icon2.svg');
+				}
+				.icon3 {
+					background-image: url('../../assets/images/a7h-icon3.svg');
+				}
+			}
+		}
+	}
+}
+.HemaStainer-page {
+	.Howitworks {
+		.H-Tabs {
+			.nav-item {
+				width: 50%;
+			}
+			.nav-link {
+				.icon1 {
+					background-image: url('../../assets/images/auto-smearer-icon1-hover.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/auto-smearer-icon2.svg');
+				}
+			}
+			.nav-link.active {
+				.icon1 {
+					background-image: url('../../assets/images/auto-smearer-icon1.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/auto-smearer-icon2-hover.svg');
+				}
+			}
+		}
+
+		.card-header {
+			.icon1 {
+				background-image: url('../../assets/images/auto-smearer-icon1.svg');
+			}
+			.icon2 {
+				background-image: url('../../assets/images/auto-smearer-icon2-hover.svg');
+			}
+			.collapsed {
+				.icon1 {
+					background-image: url('../../assets/images/auto-smearer-icon1-hover.svg');
+				}
+				.icon2 {
+					background-image: url('../../assets/images/auto-smearer-icon2.svg');
+				}
+			}
+		}
+	}
+}
+
+.a700-page .container {
+	padding: 0px !important;
+}
+
+/*
+.a700-page .m-steps .card .icon1 {
+    background-image: url('../../assets/images/a7h-icon1.svg');
+}
+.a700-page .m-steps .card.active .icon1 {
+    background-image: url('../../assets/images/a7h-icon1-hover.svg');
+}
+.a700-page .m-steps .card .icon2 {
+    background-image: url('../../assets/images/a7h-icon2.svg');
+}
+.a700-page .m-steps .card.active .icon2 {
+    background-image: url('../../assets/images/a7h-icon2-hover.svg');
+}
+.a700-page .m-steps .card .icon3 {
+    background-image: url('../../assets/images/a7h-icon3.svg');
+}
+.a700-page .m-steps .card.active .icon3  {
+    background-image: url('../../assets/images/a7h-icon3-hover.svg');
+}
+*/

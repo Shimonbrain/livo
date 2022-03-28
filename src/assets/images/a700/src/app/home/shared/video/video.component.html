@@ -1,0 +1,31 @@
+<div class="container p-0">
+   <div class="background"></div>
+    <div class="heading">
+        <span><img id="logo" src="../../../../assets/Logo v1.png" alt=""></span>  
+    </div>
+    <video autoplay muted loop id="myVideo">
+        <source src="../../../../assets/Light Mode.mp4" type="video/mp4">
+    </video>
+    <div class="values">
+        <!-- <h5 class="squeeze"><span>Long squeeze seconds are </span>{{longSqueezeValue}}</h5>
+        <h5 class="squeeze"><span>Long rest seconds are </span>{{longRestValue}}</h5>
+        <h5 class="squeeze"><span>Long reps are </span>{{longRepsValue}}</h5>
+        <h5 class="squeeze"><span>Short squeeze seconds are </span>{{shortSqueezeValue}}</h5>
+        <h5 class="squeeze"><span>Short rest seconds are </span>{{shortRestValue}}</h5>
+        <h5 class="squeeze"><span>Short reps are </span>{{shortRepsValue}}</h5>
+        <h5 class="squeeze"><span>Reverse Kegel squeeze seconds are </span>{{rkSqueezeValue}}</h5>
+        <h5 class="squeeze"><span>Reverse Kegel seconds are </span>{{rkRestValue}}</h5>
+        <h5 class="squeeze"><span>Reverse Kegel reps are </span>{{rkRepsValue}}</h5> -->
+        
+        <div class="border">
+           <svg>
+              <circle class="circle1" cx="215" cy="215" r="150"></circle>
+           </svg>
+        </div>
+        <div (click)="secondFunction()" id="sphere" class="sphere2">
+              <span class="timer">{{seconds}}</span>
+              <span><i class="fas fa-play"></i></span>
+              <span>Long Squeeze</span>
+         </div>
+      </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container mt-4 header">
+    <div *ngIf="_router.url == '/home/profile'" class="router">
+        <span [routerLink]="'/home'" class="rounded-button">
+            <i class="fas fa-arrow-left"></i>
+        </span>
+    </div>
+    <div class="name">
+        <div class="font-weight-600">Welcome,</div>
+        <div class="h4 m-0 text-align-right">{{name}}</div>
+    </div>
+    <div class="dropdown">
+        <span class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false" type="button">
+            <img id="avatarImage" class="imageround" alt="">
+        </span>
+        <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/home/profile"><i class="far fa-user-circle me-2"></i>Profile</a>
+            <a (click)="logout()" class="dropdown-item" [routerLink]="'/'"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+        </div>
+    </div>
+</div>

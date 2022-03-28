@@ -1,0 +1,65 @@
+.Distributors {
+	.D-banner {
+		height: 400px;
+		background-size: cover;
+		background-position: center center;
+		margin-bottom: 50px;
+		background-image: url("../../assets/images/Distributors-banner.png");
+	}
+	h2 {
+		color: #061F4A;
+		font-size: 32px;
+		font-family: "Tiempos";
+		letter-spacing: -1px;
+		padding-bottom: 15px;
+	}
+	.DT1 {
+		font-size: 24px;
+		color: #061F4A;
+		padding-bottom: 30px;
+	}
+	p {
+		font-size: 16px;
+		color: #061F4A;
+	}
+	.D-content1 {
+		background-image: url(../../assets/images/Distributors-img1.png);
+		min-height: 300px;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		padding-top: 100px;
+		margin-bottom: 60px;
+		margin-top: 60px;
+		h3 {
+			color: #061F4A;
+			font-size: 32px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			padding-bottom: 15px;
+		}
+		.link {
+			color: #0870CD;
+			font-size: 14px;
+			i {
+				font-size: 11px;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px) { 
+	.Distributors .D-banner {
+		height: 170px;
+	}
+	.Distributors h2, .Distributors p, .Distributors .DT1 {
+		text-align: center;
+	}
+	.Distributors .D-content1 {
+		background-image: url(../../assets/images/Distributors-img2.jpg);
+		min-height: 400px;
+		padding-top: 40px;
+		margin-bottom: 60px;
+		margin-top: 60px;
+		text-align: center;
+	}
+}

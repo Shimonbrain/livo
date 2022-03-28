@@ -1,0 +1,89 @@
+.round-icon{
+    background-color: #ebebfc;
+    height: 24px;
+    width: 24px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+}
+.round-buttons{
+    height: 36px;
+    width: 36px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+.specialButtonActive{
+    background-color: #2f45c5;
+    color: #fff;
+}
+.specialButton{
+    font-size: 1rem;
+    background-color: #ebebfc;
+}
+.exercise-selector{
+    border: none;
+    box-shadow: 0 1px 4px 0 #dadada!important;
+    font-family: "gillroy-semi";
+    border-radius: 15px;
+}
+.exercise{
+    cursor: pointer;
+}
+.exercise:hover{
+    background-color: #f8f9fa;
+}
+.configuration{
+    background-color: #ebebfc;
+    border-radius: .8rem;
+    font-family: "gillroy-semi";
+}
+select{
+    border-radius: 10px;
+    background-color: blue;
+}
+select:focus{
+    outline: none;
+    border: 0;
+}
+.timings-select{
+    width: 90%;
+    border-radius: .8rem;
+}
+.timings{
+    position: relative;
+    min-width: 90px;
+    min-height: 200px;
+    height: 50px;
+    overflow-y: scroll !important;
+    border-radius: 20px;
+}
+.timings ul{
+    align-items: center;
+    padding-left: 0;
+    align-items: center;
+}
+.timings ul li{
+    list-style: none;
+}
+.timings ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.longsqueeze .squeezeseconds, .restseconds, .reps p{
+    font-size: 12px;
+    margin-top: 5px;
+    padding-right: 10px;
+    float: right;
+}
+.kegel{
+    justify-content: space-between;
+}
+.reverseKegelActive{
+    color: #979797;
+    pointer-events: none;
+}

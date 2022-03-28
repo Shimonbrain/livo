@@ -1,0 +1,80 @@
+button.learn-more {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	background: transparent;
+	padding: 0;
+	font-size: inherit;
+	font-family: inherit;
+	&:hover {
+		.circle {
+			width: 85%;
+			border-radius: 5px;
+			.icon.arrow {
+				background: #fff;
+				transform: translate(1rem, 0);
+				left: 3px;
+			}
+		}
+		.button-text {
+			color: #fff;
+		}
+	}
+}
+
+button.learn-more {
+	width: 160px;
+	height: auto;
+	.circle {
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+		position: relative;
+		display: block;
+		margin: 0;
+		width: 32px;
+		height: 32px;
+		background: #0870cd;
+		border-radius: 16px;
+		.icon {
+			transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			background: #fff;
+		}
+		.icon.arrow {
+			transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+			left: 7px;
+			width: 13px;
+			height: 1.5px;
+			background: none;
+			&::before {
+				position: absolute;
+				content: '';
+				top: -0.2rem;
+				right: 0.05rem;
+				width: 0.5rem;
+				height: 0.5rem;
+				border-top: 0.12rem solid #fff;
+				border-right: 0.12rem solid #fff;
+				transform: rotate(45deg);
+			}
+		}
+	}
+	.button-text {
+		transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 0.25rem 0;
+		color: #0870cd;
+		line-height: 1.6;
+		text-align: center;
+	}
+}

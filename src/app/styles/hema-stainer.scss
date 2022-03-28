@@ -1,0 +1,398 @@
+.HemaStainer-page {
+  background-color: #f9f9f7;
+  padding: 50px 0;
+  .HST1 {
+    color: #ff6567;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  .HST3 {
+    color: #ff6567;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 8px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    z-index: 1;
+  }
+  .HST2 {
+    font-family: "Tiempos";
+    color: #3e5172;
+    font-size: 28px;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  h2 {
+    color: #061f4a;
+    font-size: 32px;
+    font-family: "Tiempos";
+    text-align: center;
+    letter-spacing: -1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .h2 {
+    color: #061f4a;
+    font-size: 32px;
+    font-family: "Tiempos";
+    text-align: center;
+    letter-spacing: -1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    z-index: 1;
+    top: 40px;
+  }
+  .HS-content1 {
+    padding: 0px 30px 50px 30px;
+    h3 {
+      color: #061f4a;
+      font-size: 24px;
+    }
+    p {
+      color: #3e5172;
+      font-size: 16px;
+    }
+  }
+  .HS-content1-2 {
+    padding: 50px;
+    background-color: #fff;
+    h5 {
+      color: #0870cd;
+      font-size: 24px;
+      padding-bottom: 10px;
+    }
+    hr {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    h4 {
+      color: #061f4a;
+      font-size: 32px;
+      span {
+        color: #ff6567;
+      }
+    }
+    p {
+      color: #3e5172;
+      font-size: 16px;
+    }
+  }
+  .HS-content2 {
+    h3 {
+      color: #061f4a;
+      font-size: 32px;
+      font-family: "Tiempos";
+      letter-spacing: -1px;
+      padding-bottom: 20px;
+      span {
+        color: #ff6567;
+      }
+    }
+    .Wbox1 {
+      background-color: #fff;
+      padding: 20px 30px;
+      margin-bottom: 50px;
+      height: calc(100% - 50px);
+    }
+    .HSH1 {
+      font-size: 16px;
+      color: #0870cd;
+      padding-bottom: 10px;
+    }
+    .HSH2 {
+      font-size: 24px;
+      color: #0870cd;
+    }
+    p {
+      color: #3e5172;
+      font-size: 16px;
+    }
+  }
+  .HS-points {
+    padding: 15px;
+    img {
+      margin-right: 10px;
+    }
+  }
+  .HS-content4 {
+    padding: 30px;
+    margin-bottom: 30px;
+    h3 {
+      color: #061f4a;
+      font-size: 28px;
+      font-family: "Tiempos";
+      letter-spacing: -1px;
+      padding-bottom: 20px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      margin: 0;
+      padding: 10px 0 10px 20px;
+      list-style-type: none;
+      color: #061f4a;
+      &:before {
+        content: "\f058";
+        font-family: "Font Awesome 5 Free";
+        display: inline-block;
+        margin-left: -1.3em;
+        width: 1.3em;
+        color: #0870cd;
+      }
+    }
+  }
+  .HS-content3 {
+    background-color: #fff;
+    padding: 50px 0;
+    h2 {
+      color: #061f4a;
+      font-size: 32px;
+      font-family: "Tiempos";
+      text-align: center;
+      letter-spacing: -1px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      span {
+        color: #ff6567;
+      }
+    }
+    .HST1 {
+      font-size: 24px;
+      color: #3e5172;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    .HSbox {
+      border: 1px solid rgba(62, 81, 114, 0.2);
+      padding: 30px;
+      min-height: 100%;
+      h3 {
+        color: #0870cd;
+        font-size: 24px;
+        font-family: "Avenir LT W04_65 Medium1475536";
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(8, 112, 205, 0.08);
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin: 0;
+        padding: 15px 0 15px 20px;
+        list-style-type: none;
+        color: #061f4a;
+        border-bottom: 1px solid rgba(8, 112, 205, 0.08);
+        &:before {
+          content: "\f058";
+          font-family: "Font Awesome 5 Free";
+          display: inline-block;
+          margin-left: -1.3em;
+          width: 1.3em;
+          color: #0870cd;
+        }
+      }
+      .buybtn {
+        background-color: #0870cd;
+        border-color: #0870cd;
+        color: #fff;
+        line-height: 1;
+        padding: 8px 18px;
+        margin-top: 30px;
+      }
+    }
+  }
+  .HS-why {
+    padding: 50px 0;
+    h3 {
+      color: #061f4a;
+      font-size: 32px;
+      font-family: "Tiempos";
+      letter-spacing: -1px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      span {
+        color: #ff6567;
+      }
+    }
+    p {
+      font-size: 16px;
+      color: #3e5172;
+    }
+  }
+}
+
+.home-certif {
+  padding: 200px 0;
+  h2 {
+    color: #061f4a;
+    font-size: 40px;
+    font-family: "Tiempos";
+    text-align: center;
+    letter-spacing: -1px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .HCT1 {
+    color: #061f4a8a;
+    font-size: 24px;
+    text-align: center;
+  }
+  img {
+    margin: 0 20px;
+  }
+}
+
+.smear-image {
+  margin: 160px 0px 0px -35px;
+}
+
+.smear-video {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
+.BMHeight {
+  min-height: 600px;
+}
+
+.inner-flex-feature-div {
+  display: flex;
+  margin-bottom: 20px;
+  img {
+    width: 35px;
+    margin-right: 25px;
+    height: 35px;
+  }
+  p {
+    color: #000f7e;
+    font-family: "Tiempos";
+    letter-spacing: 0.68px;
+    font-size: 20px;
+  }
+}
+
+.opacity-0 {
+	opacity: 0;
+  }
+  .opacity-1 {
+	opacity: 1;
+  }
+  .video-shadow {
+	box-shadow: 0px 0px 19px #bebebe;
+  }
+  .contact-1 {
+	border-radius: 5px;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	margin-right: 0 !important;
+	background-color: #f05355;
+	letter-spacing: 0.8px;
+	color: #fff;
+	border: none;
+	height: 35px;
+	margin-left: 20px;
+	transition: 0.2s;
+	font-size: 14px;
+  }
+
+@media only screen and (max-width: 767px) {
+  .HemaStainer-page .HS-content1 {
+    padding: 0px 15px 50px 15px;
+  }
+  .HemaStainer-page .HS-content1-2 {
+    padding: 50px 15px;
+  }
+  .HemaStainer-page .HS-content1-2 h4 {
+    color: #061f4a;
+    font-size: 26px;
+  }
+  .HemaStainer-page .HS-why h3 {
+    font-size: 26px;
+    text-align: center;
+  }
+  .HemaStainer-page .HS-why p {
+    text-align: center;
+  }
+  .HemaStainer-page .HS-content4 {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .HemaStainer-page .HS-content2 .Wbox1 {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .smear-video {
+    margin-top: 80px;
+    margin-right: 0px;
+  }
+  .smear-image {
+    margin: 160px 0px 0px 0px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .BMHeight {
+    min-height: 650px;
+  }
+
+  .smear-video {
+    margin-right: 0px;
+    margin-top: 45px;
+  }
+  .smear-image {
+    margin: 140px 0px 0px 0px;
+  }
+
+  .HemaStainer-page {
+    .HS-points {
+      padding: 5px;
+    }
+
+    .HS-points img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .HS-content1 .order-1 {
+      padding: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .BMHeight {
+    min-height: 450px;
+  }
+
+  .smear-video {
+    margin-right: 0px;
+  }
+  .smear-image {
+    margin: 160px 0px 0px 0px;
+  }
+
+  .HemaStainer-page {
+    .HS-points {
+      padding: 5px;
+    }
+
+    .HS-points img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .HS-content1 .order-1 {
+      padding: 1rem;
+    }
+  }
+}

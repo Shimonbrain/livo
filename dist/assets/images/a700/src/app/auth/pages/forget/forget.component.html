@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="logo mt-2">
+                <img src="../../../../assets/Logo v1.png" alt="">
+            </div>
+            <div class="body">
+                <div class="title text-center">
+                    <h3>Welcome Back to Bloomia.</h3>
+                    <p>Please enter your email address associated with bloomia account</p>
+                </div>
+                <div class="message text-center text-success mb-2">{{message}}</div>
+                <div class="message text-center text-danger mb-2">{{error}}</div>
+                <form method="POST" [formGroup]="forgotForm">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter your email address" formControlName = "email" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fal fa-envelope"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.email">{{ formErrors.email }}</div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" (click)="forgotPassword()" class="signinbtn btn" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="custom-text bottom">
+                            Already have an account?<a class="mx-2" routerLink="/">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

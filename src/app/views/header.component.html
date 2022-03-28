@@ -1,0 +1,147 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="header">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']" (click)="anchorClick()">
+      <img src="../../assets/images/logo.svg" alt="Livo - Brand Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click) = "disableScroll()">
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <img src="../assets/images/header-product-img/Frame 1.png" />
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav flex-grow-1 justify-content-end">
+        <!-- mobile product links -->
+        <li class="nav-item mobile-display" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <p class="nav-link link fromLeft" style="cursor: pointer;">Product <i
+              class="fas fa-chevron-down ml-3" style="font-size: 11px;"></i></p>
+          <span class="nav-link-span fromLeft"></span>
+          <div class="collapse" id="collapseExample">
+            <div class="mobile-header-product-container">
+              <a [routerLink]="['/A700']" class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/Group 18.png" />
+                <span>Livo A700</span>
+              </a>
+              <a  class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/Group 18.png" />
+                <span>Livo BP 18</span>
+              </a>
+              <a  class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/Group 18.png" />
+                <span>Livo IH 18</span>
+              </a>
+              <a [routerLink]="['/A1000']" class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/Group 18.png" />
+                <span>Livo A1000</span>
+              </a>
+              <a [routerLink]="['/auto-smearer']" class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/AutoSmearer.png" />
+                <span>Livo AutoSmearer</span>
+              </a>
+              <a  class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/Group 18.png" />
+                <span>Livo S10</span>
+              </a>
+              <a [routerLink]="['/hema-stainer']" class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/RapidStain.png" />
+                <span>HemaStainer</span>
+              </a>
+              <a [routerLink]="['/rapid-stain']" class="PD-link" (click)="anchorClick()">
+                <img src="../assets/images/header-product-img/RapidStain.png" />
+                <span>Livo Rapid Stain</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        
+        <!-- desktop product links -->
+        <li class="nav-item desktop-display">
+          <a class="nav-link link fromLeft" style="cursor: pointer;" (click)="showProducts()">Products <i
+              class="fas fa-chevron-down" style="font-size: 11px;"></i></a>
+          <span class="nav-link-span fromLeft"></span>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link link fromLeft" style="cursor: pointer;" [routerLink]="['/digital-pathology']" (click)="anchorClick()">Pathology</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link link" [routerLink]="['/about-livo']" (click)="anchorClick()">About Company</a>
+          <!-- <div class="dropdown-menu fade-down navbarCompanyDropdown" aria-labelledby="navbarCompanyDropdown">
+            <a class="dropdown-item" [routerLink]="['/about-livo']">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12.1276 5C8.15882 5 5 8.15882 5 12.1276C5 16.0964 8.15882 19.2552 12.1276 19.2552C16.0964 19.2552 19.2552 16.0964 19.2552 12.1276C19.2552 8.15882 16.0964 5 12.1276 5ZM15.9344 14.0715C15.9344 14.1525 15.8534 14.2335 15.7724 14.2335H14.3955C14.3145 14.3145 14.3145 14.3145 14.2335 14.3955V15.7724C14.2335 15.8534 14.1525 15.9344 14.0715 15.9344H10.1837C10.1027 15.9344 10.0217 15.8534 10.0217 15.7724V14.3955C9.94072 14.3145 9.94072 14.3145 9.85973 14.2335H8.4828C8.40181 14.2335 8.32081 14.1525 8.32081 14.0715V10.1837C8.32081 10.1027 8.40181 10.0217 8.4828 10.0217H9.85973C9.94072 9.94072 9.94072 9.94072 10.0217 9.85973V8.48281C10.0217 8.40181 10.1027 8.32081 10.1837 8.32081H14.0715C14.1525 8.32081 14.2335 8.40181 14.2335 8.48281V9.85973C14.3145 9.94072 14.3145 9.94072 14.3955 10.0217H15.7724C15.8534 10.0217 15.9344 10.1027 15.9344 10.1837V14.0715Z"
+                  fill="#F05355" />
+              </svg>
+              About Livo
+            </a>
+            <a class="dropdown-item" [routerLink]="['/careers']">
+              <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" width="24" height="24" viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M13.8691 12.2802C13.5577 12.2802 13.2852 12.5527 13.2852 12.8641V18.7161C13.2852 19.0275 13.5577 19.3 13.8691 19.3C14.1806 19.3 14.4531 19.0275 14.4531 18.7161V12.8641C14.4531 12.5138 14.2195 12.2802 13.8691 12.2802ZM17.8012 7.14124C17.7233 7.02445 17.7233 6.90765 17.8012 6.79086L18.8913 5.50613C19.047 5.31147 18.9302 5.07788 18.6966 5.07788H13.5577C13.402 5.07788 13.2852 5.19467 13.2852 5.3504V8.5817C13.2852 8.73743 13.402 8.85422 13.5577 8.85422H18.6577C18.8913 8.85422 19.0081 8.5817 18.8523 8.42598L17.8012 7.14124Z"
+                  fill="#FCFCFC" />
+                <path
+                  d="M7.85659 8.65954C8.8688 8.65954 9.68636 7.84199 9.68636 6.82977C9.68636 5.81756 8.8688 5 7.85659 5C6.84437 5 6.02681 5.81756 6.02681 6.82977C6.02681 7.84199 6.84437 8.65954 7.85659 8.65954ZM12.4505 9.74962H6.49399C6.10468 9.74962 5.79323 10.0221 5.71536 10.3725L5.0146 14.1878C4.97567 14.3825 5.0146 14.616 5.13139 14.7718L6.10468 16.2122C6.18254 16.329 6.22147 16.4458 6.22147 16.6015L6.45506 18.5603C6.49399 18.9496 6.84437 19.2611 7.23368 19.2611H8.28483C8.67414 19.2611 9.02453 18.9496 9.06346 18.5603L9.29705 16.5626C9.29705 16.4847 9.33598 16.3679 9.37491 16.2901L9.6085 15.784C9.64743 15.6672 9.68636 15.5504 9.68636 15.4336V11.3069H12.4116C12.8398 11.3069 13.1902 10.9565 13.1902 10.5282C13.2291 10.1 12.8787 9.74962 12.4505 9.74962Z"
+                  fill="#FCFCFC" />
+              </svg>
+              Careers
+            </a>
+            <a class="dropdown-item" [routerLink]="['/contact-us']">
+              <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" width="24" height="24" viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M10.25 10.6875C10.25 10.2227 9.83984 9.8125 9.375 9.8125H8.9375C7.95312 9.8125 7.1875 10.6055 7.1875 11.5625V12.875C7.1875 13.8594 7.95312 14.625 8.9375 14.625H9.375C9.83984 14.625 10.25 14.2422 10.25 13.75V10.6875ZM15.0625 14.625C16.0195 14.625 16.8125 13.8594 16.8125 12.875V11.5625C16.8125 10.6055 16.0195 9.8125 15.0625 9.8125H14.625C14.1328 9.8125 13.75 10.2227 13.75 10.6875V13.75C13.75 14.2422 14.1328 14.625 14.625 14.625H15.0625ZM12 5C8.08984 5 5.10938 8.25391 5 12V12.4375C5 12.6836 5.19141 12.875 5.4375 12.875H5.875C6.09375 12.875 6.3125 12.6836 6.3125 12.4375V12C6.3125 8.88281 8.85547 6.3125 12 6.3125C15.1172 6.3125 17.6875 8.88281 17.6875 12H17.6602C17.6602 12.082 17.6875 16.5391 17.6875 16.5391C17.6875 17.1953 17.168 17.6875 16.5117 17.6875H13.75C13.75 16.9766 13.1484 16.375 12.4375 16.375H11.5625C10.8242 16.375 10.25 16.9766 10.25 17.6875C10.25 18.4258 10.8242 19 11.5625 19H16.5117C17.8789 19 19 17.9062 19 16.5391V12C18.8633 8.25391 15.8828 5 12 5Z"
+                  fill="#FCFCFC" />
+              </svg>
+              Contact Us
+            </a>
+          </div> -->
+        </li>
+        <!--<li class="nav-item dropdown">
+            <a class="nav-link link fromLeft" style="cursor: pointer;" [routerLink]="['/clients']">Clients</a>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link link" [routerLink]="['/myaccount']" (click)="anchorClick()">{{is_logged_in ? "My account" : "Login"}}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link link contact-btn" [routerLink]="['/myaccount']" (click)="anchorClick()">CONTACT SALES</a>
+          <p class="mobile-header-info">info@livo.ai <span style="color: #F05355;"> | </span> 040-48544896</p>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link link" [routerLink]="['/cart-checkout']"><i
+            class="fas fa-shopping-cart"></i>&nbsp;<span *ngIf="no_of_items > 0"
+                                                         class="badge bg-danger">{{no_of_items}}</span>&nbsp;Cart
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- products -->
+<div id="productsHeader">
+  <div class="product-dropdown product-dropdown-header text-center" style="display: none;">
+    <a [routerLink]="['/A700']" class="PD-link">
+      <img src="../assets/images/A700.svg">
+      <span>A700</span>
+    </a>
+    <a [routerLink]="['/A1000']" class="PD-link">
+      <img src="../assets/images/a1000.svg">
+      <span>A1000</span>
+    </a>
+    <a [routerLink]="['/auto-smearer']" class="PD-link">
+      <img src="../assets/images/AutoSmearer.svg">
+      <span>AutoSmearer</span>
+    </a>
+    <a [routerLink]="['/hema-stainer']" class="PD-link">
+      <img src="../assets/images/HemaStainer.svg">
+      <span>HemaStainer</span>
+    </a>
+    <a [routerLink]="['/rapid-stain']" class="PD-link">
+      <img src="../assets/images/RapidStain.svg" style="padding-bottom: 7px;">
+      <span>Rapid Stain</span>
+    </a>
+  </div>
+</div>

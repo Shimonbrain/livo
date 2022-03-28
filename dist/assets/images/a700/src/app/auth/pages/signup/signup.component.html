@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <div class="logo">
+                <img src="../../../../assets/Logo v1.png" alt="">
+            </div>
+            <div class="title mt-5">
+                <h5>Welcome to Bloomia.</h5>
+                <p>Please enter your details to create your account</p>
+            </div>
+            <div class="message text-center text-danger mb-2">{{message}}</div>
+            <form method="POST" [formGroup]="userRegistration">
+                <div class="form">
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="text" placeholder="Firstname" formControlName="first_name" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fal fa-user"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.first_name">{{ formErrors.first_name }}</div>                      
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="text" placeholder="Lastname" formControlName="last_name" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fal fa-user"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.last_name">{{ formErrors.last_name }}</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="text" placeholder="Enter your email address" formControlName="email" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fal fa-envelope"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.email">{{ formErrors.email }}</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="password" placeholder="Enter your password" formControlName="password" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fas fa-lock"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.password">{{ formErrors.password }}</div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" (click)="submit()" class="submit btn" value="Register">
+                    </div>
+                </div>
+            </form>
+            <div class="custom-text">
+                <p>or sign in with</p>
+            </div>
+            <div class="button">
+                <button class="btn googlebtn"><i class="fab fa-google"></i> <span> Signup with google</span></button>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 mt-5">
+                        <div class="custom-text bottom">
+                            Already have an account?<a class="mx-2" routerLink="/">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,130 @@
+.container{
+    background-color: #fff;
+    font-size: 1rem;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 200px;
+}
+.title h5{
+    display: flex;
+    justify-content: center;
+    font-family: "riffic";
+}
+.title p{
+    display: flex;
+    justify-content: center;
+    font-family: "gillroy-medium";
+    color: #979797;
+    font-size: 13px;
+}
+.form{
+    width: 100%;
+}
+.form-group{
+    margin-bottom: .8rem;
+    width: 65%;
+    margin-left: 9rem;
+    font-family: "gillroy-semi";
+}
+.input-group1{
+    display: inline-block;
+    width: 71%;
+}
+.authinput{
+    width: 100%;
+    background-color: #ebebeb;
+    border: none;
+    border: .5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    font-size: .8rem;
+}
+.authinput:focus{
+    outline: none;
+    box-shadow: none;
+}
+.input-group-append{
+    display: inline-block;
+    text-align: center;
+    width: 10%;
+    padding: 6px;
+    font-size: .8rem;
+    background-color: #ebebeb;
+    border: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+::placeholder{
+    color: black;
+    font-weight: 600;
+}
+.errors{
+    font-size: 12px;
+}
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button .submit{
+    padding: 5px 20px;
+    width: 53%;
+    background-color: rgb(47, 69, 197);
+    color: #fff;
+    align-items: center;
+    margin-bottom: 16px;
+    border-radius: .5rem;
+    font-size: 13px;
+    font-family: "gillroy-semi";
+}
+.custom-text{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #979797;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: "gillroy-semi";
+}
+.else p{
+    color: #979797;
+    font-family: "gillroy-semi";
+}
+.googlebtn{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 9px 40px;
+    font-family: "gillroy-semi";
+}
+.googlebtn span, i{
+    font-size: 12px;
+    font-weight: 400;
+}
+.bottom{
+    margin-top: 60px;
+    align-items: center;
+    bottom: 20px;
+    color: #979797;
+    font-size: 16px;
+    font-weight: 400;
+}
+.bottom a{
+    text-decoration: none;
+    color: #000;
+}

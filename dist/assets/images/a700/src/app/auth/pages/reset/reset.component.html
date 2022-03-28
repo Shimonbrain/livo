@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <div class="logo">
+                <img src="../../../../assets/Logo v1.png" alt="">
+            </div>
+            <div class="title mt-5">
+                <h3>Welcome Back to Bloomia.</h3>
+                <p>Please enter your new password</p>
+            </div>
+            <div class="message text-danger text-center mb-2">
+                {{message}}
+            </div>
+            <form method="POST" [formGroup]="resetForm">
+                <div class="form">
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="text" placeholder="Enter your new Password" formControlName="password" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fas fa-lock"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.password">{{ formErrors.password }}</div>                      
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="password" placeholder="Confirm your password" formControlName="newPassword" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fas fa-lock"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.newPassword">{{ formErrors.newPassword }}</div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" (click)="resetPassword()" class="submit btn" value="Submit">
+                    </div>
+                </div>
+            </form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="custom-text bottom">
+                            Want to try sign In?<a class="mx-2" routerLink="/login">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

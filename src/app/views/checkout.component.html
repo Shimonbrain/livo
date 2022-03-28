@@ -1,0 +1,607 @@
+<div class="Checkout">
+    <div class="container">
+        <h2>Cart</h2>
+        <div *ngIf="!isItemsInCart">
+            <div class="alert alert-danger" role="alert">
+                Your cart is currently empty.
+            </div>
+        </div>
+        <form [formGroup]="addToCart">
+            <table class="table" cellspacing="0" *ngIf="isItemsInCart">
+                <thead>
+                    <tr>
+                        <th class="product-thumbnail">Image</th>
+                        <th class="product-name">Product</th>
+                        <th class="product-price">Price</th>
+                        <th class="product-quantity">Quantity</th>
+                        <th class="product-subtotal">Subtotal</th>
+                        <th class="product-remove">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let itemForm of _cartItems.controls;let index = index">
+                        <td class="product-thumbnail">
+                            <img src="../../assets/images/RapidStain.png" width="49" height="62">
+                        </td>
+
+                        <td class="product-name" data-title="Product" [formGroup]="itemForm">
+                            Livo Hematology Rapid Stain {{itemForm.controls.volume.value}}
+                        </td>
+
+                        <td class="product-price" data-title="Price">
+                            <span><span>₹</span>{{itemForm.controls.price.value}}</span>
+                        </td>
+
+                        <td class="product-quantity" data-title="Quantity" [formGroup]="itemForm">
+                            <div class="quantity">
+                                <input type="number" formControlName="quantity" class="form-control" step="1" min="1" max="50" [value]="itemForm.controls.quantity.value" title="Qty" size="4" inputmode="numeric">
+                            </div>
+                        </td>
+
+                        <td class="product-subtotal" data-title="Subtotal" [formGroup]="itemForm">
+                            <span><span>₹</span>{{itemForm.controls.price.value * itemForm.controls.quantity.value}}
+                            </span>
+                        </td>
+                        <td class="product-remove" [formGroup]="itemForm">
+                            <i i-bs name="x-circle-fill" (click)="removeCartItem(index)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+    <div class="container" *ngIf="isItemsInCart">
+        <h2>Billing Information</h2>
+        <form [formGroup]="checkoutCart" (ngSubmit)="placeAnOrder()" autocomplete="off">
+            <div class="row">
+                <div class="col-8 col-md-8">
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <h3>User information</h3>
+                            <div class="w-box">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-check" [ngClass]="{ 'is-invalid': submitted && cartControls.useraccount.errors }">
+                                            <input id="input_new_useraccount" formControlName="useraccount" type="radio" class="form-check-input" value="new" [checked]="cartControls.useraccount.value == 'new'" (click)="changeUserAccount($event)">
+                                            <label class="form-check-label" for="input_new_useraccount">New user</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check" [ngClass]="{ 'is-invalid': submitted && cartControls.useraccount.errors }">
+                                            <input id="input_existing_useraccount" formControlName="useraccount" type="radio" class="form-check-input" value="existing" [checked]="cartControls.useraccount.value == 'existing'" (click)="changeUserAccount($event)">
+                                            <label class="form-check-label" for="input_existing_useraccount">Existing
+                                                user</label>
+                                        </div>
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="submitted && cartControls.useraccount.errors">
+                                        <div *ngIf="cartControls.useraccount.errors.required">
+                                            Please choose account type
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-12" *ngIf="newUser">
+                            <div class="w-box">
+                                <div class="form-row" *ngIf="checkoutErrors">
+                                    <div class="col">
+                                        <div class="alert alert-danger">{{checkoutErrorMessage}}</div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_firstname.errors }">
+                                            <label for="input_billing_firstname">First name <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input id="input_billing_firstname" formControlName="billing_firstname" type="text" class="form-control">
+                                        </div>
+
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_firstname.errors">
+                                            <div *ngIf="cartControls.billing_firstname.errors.required">
+                                                Please enter first name
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_lastname.errors }">
+                                            <label for="input_billing_lastname">Last name <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input id="input_billing_lastname" formControlName="billing_lastname" type="text" class="form-control">
+                                        </div>
+
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_lastname.errors">
+                                            <div *ngIf="cartControls.billing_lastname.errors.required">
+                                                Please enter last name
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="input_blling_company">Company Name (Optional)</label>
+                                            <input id="input_blling_company" formControlName="billing_company" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_email.errors }">
+                                            <label for="input_billing_email">Email <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="email" id="input_billing_email" formControlName="billing_email" class="form-control">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_email.errors">
+                                            <div *ngIf="cartControls.billing_email.errors.required">
+                                                Please enter email
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_phone.errors }">
+                                            <label for="input_billing_phone">Phone <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="text" id="input_billing_phone" formControlName="billing_phone" class="form-control">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_phone.errors">
+                                            <div *ngIf="cartControls.billing_phone.errors.required">
+                                                Please enter phone number
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.username.errors }">
+                                            <label for="input_username">User name <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="text" id="input_username" formControlName="username" class="form-control">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.username.errors">
+                                            <div *ngIf="cartControls.username.errors.required">
+                                                Please enter user name
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.password.errors }">
+                                            <label for="input_password">Password <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="password" id="input_password" formControlName="password" class="form-control">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.password.errors">
+                                            <div *ngIf="cartControls.password.errors.required">
+                                                Please enter password
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_address_1.errors }">
+                                            <label for="input_billing_address_1">Billing address <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="text" id="input_billing_address_1" formControlName="billing_address_1" class="form-control" placeholder="House number and street name">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_address_1.errors">
+                                            <div *ngIf="cartControls.billing_address_1.errors.required">
+                                                Please enter adddress
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_address_2.errors }">
+                                            <label for="input_billing_address_2">Billing address <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="text" class="form-control" formControlName="billing_address_2" id="input_billing_address_2" placeholder="Apartment, suite, unit, etc. (optional)">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_address_2.errors">
+                                            <div *ngIf="cartControls.billing_address_2.errors.required">
+                                                Please enter adddress
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_country.errors }">
+                                            <label for="input_blling_country">Country</label>
+                                            <select id="input_blling_country" formControlName="billing_country" class="form-control">
+                                                <option value="India" selected>India</option>
+                                            </select>
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_country.errors">
+                                            <div *ngIf="cartControls.billing_country.errors.required">
+                                                Please select country
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_state.errors }">
+                                            <label for="input_billing_state">State <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <select id="input_billing_state" formControlName="billing_state" class="form-control">
+                                                <option *ngFor="let state of states" value="{{state}}">{{state}}
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_state.errors">
+                                            <div *ngIf="cartControls.billing_state.errors.required">
+                                                Please select state
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_city.errors }">
+                                            <label for="input_billing_city">Town/City <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="text" id="input_billing_city" formControlName="billing_city" class="form-control">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_city.errors">
+                                            <div *ngIf="cartControls.billing_city.errors.required">
+                                                Please enter city
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.billing_postcode.errors }">
+                                            <label for="input_billing_postcode">Postcode <abbr class="required"
+                                                    title="required">*</abbr></label>
+                                            <input type="text" id="input_billing_postcode" formControlName="billing_postcode" class="form-control">
+                                        </div>
+                                        <div class="invalid-feedback" *ngIf="submitted && cartControls.billing_postcode.errors">
+                                            <div *ngIf="cartControls.billing_postcode.errors.required">
+                                                Please enter postcode
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--<div class="form-row">
+                                    <div class="col">
+                                        <input type="checkbox" id="createaccount"
+                                            formControlName="createaccount">&nbsp;&nbsp;<label
+                                            for="createaccount">Create an
+                                            account?</label>
+                                    </div>
+                                </div>-->
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="checkbox" (change)="changeShipping($event)" id="ship_to_different_address" formControlName="ship_to_different_address">&nbsp;&nbsp;
+                                        <label for="ship_to_different_address">
+                                            <h3 class=" pb-2 ">Ship to a difference address?</h3>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div id="shippingForm">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_firstname.errors }">
+                                                <label for="input_shipping_first_name">Firstname <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <input id="input_shipping_first_name" formControlName="shipping_firstname" type="text" class="form-control">
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_firstname.errors">
+                                                <div *ngIf="cartControls.shipping_firstname.errors.required">
+                                                    Please enter firstname
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_lastname.errors }">
+                                                <label for="input_shipping_last_name">Lastname <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <input id="input_shipping_last_name" formControlName="shipping_lastname" type="text" class="form-control">
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_lastname.errors">
+                                                <div *ngIf="cartControls.shipping_lastname.errors.required">
+                                                    Please enter lastname
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="input_shipping_company">Company Name (Optional)</label>
+                                                <input id="input_shipping_company" formControlName="shipping_company" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_address_1.errors }">
+                                                <label for="input_shipping_address_1">Shipping address 1<abbr
+                                                        class="required" title="required">*</abbr></label>
+                                                <input type="text" id="input__shipping_address_1" formControlName="shipping_address_1" class="form-control" placeholder="House number and street name">
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_address_1.errors">
+                                                <div *ngIf="cartControls.shipping_address_1.errors.required">
+                                                    Please enter address
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_address_2.errors }">
+                                                <label for="input_shipping_address_2">Shipping address 2<abbr
+                                                        class="required" title="required">*</abbr></label>
+                                                <input type="text" class="form-control" formControlName="shipping_address_2" id="input_shipping_address_2" placeholder="Apartment, suite, unit, etc. (optional)">
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_address_2.errors">
+                                                <div *ngIf="cartControls.shipping_address_2.errors.required">
+                                                    Please enter address
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_country.errors }">
+                                                <label for="input_shipping_country">Country</label>
+                                                <select id="input_shipping_country" formControlName="shipping_country" class="form-control">
+                                                    <option value="India" selected>India</option>
+                                                </select>
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_country.errors">
+                                                <div *ngIf="cartControls.shipping_country.errors.required">
+                                                    Please enter country
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_state.errors }">
+                                                <label for="input_shipping_state">State <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <select id="input_shipping_state" formControlName="shipping_state" class="form-control">
+                                                    <option *ngFor="let state of states" value="{{state}}">{{state}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_state.errors">
+                                                <div *ngIf="cartControls.shipping_state.errors.required">
+                                                    Please enter state
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_city.errors }">
+                                                <label for="input_shipping_city">Town/City <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <input type="text" id="input_shipping_city" formControlName="shipping_city" class="form-control">
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_city.errors">
+                                                <div *ngIf="cartControls.shipping_city.errors.required">
+                                                    Please enter city
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': submitted && cartControls.shipping_postcode.errors }">
+                                                <label for="input_shipping_postcode">Postcode <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <input type="text" id="input_shipping_postcode" formControlName="shipping_postcode" class="form-control">
+                                            </div>
+                                            <div class="invalid-feedback" *ngIf="submitted && cartControls.shipping_postcode.errors">
+                                                <div *ngIf="cartControls.shipping_postcode.errors.required">
+                                                    Please enter postcode
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12" *ngIf="!newUser">
+                            <div [formGroup]="loginForm">
+                                <div class="w-box">
+                                    <div class="form-row" *ngIf="loginErrors">
+                                        <div class="col">
+                                            <div class="alert alert-danger" [innerHTML]="loginErrorMessage"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row" *ngIf="!customer">
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': signsubmitted && loginControls.login_email.errors }">
+                                                <label for="login_email">Email</label>
+                                                <input id="login_email" formControlName="login_email" type="text" class="form-control" autocomplete="off">
+
+                                                <div class="invalid-feedback" *ngIf="signsubmitted && loginControls.login_email.errors">
+                                                    <div *ngIf="loginControls.login_email.errors.required">
+                                                        Please enter email
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row" *ngIf="!customer">
+                                        <div class="col">
+                                            <div class="form-group" [ngClass]="{ 'is-invalid': signsubmitted && loginControls.login_password.errors }">
+                                                <label for="login_password">Password</label>
+                                                <input id="login_password" formControlName="login_password" type="password" class="form-control" autocomplete="off">
+                                                <div class="invalid-feedback" *ngIf="signsubmitted && loginControls.login_password.errors">
+                                                    <div *ngIf="loginControls.login_password.errors.required">
+                                                        Please enter password
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row" *ngIf="customer">
+                                        <div class="col">
+                                            <h3>Billing Address</h3>
+                                            <table class="table">
+                                                <tr>
+                                                    <th>First name</th>
+                                                    <td>{{customer.billing.first_name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Last name</th>
+                                                    <td>{{customer.billing.last_name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Email</th>
+                                                    <td>{{customer.billing.email}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Phone</th>
+                                                    <td>{{customer.billing.phone}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Address #1</th>
+                                                    <td>{{customer.billing.address_1}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Address #2</th>
+                                                    <td>{{customer.billing.address_2}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Country</th>
+                                                    <td>{{customer.billing.country}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>City</th>
+                                                    <td>{{customer.billing.city}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>State</th>
+                                                    <td>{{customer.billing.state}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Postcode</th>
+                                                    <td>{{customer.billing.postcode}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col">
+                                            <h3>Shippig Address</h3>
+                                            <table class="table">
+                                                <tr>
+                                                    <th>First name</th>
+                                                    <td>{{customer.shipping.first_name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Last name</th>
+                                                    <td>{{customer.shipping.last_name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Address #1</th>
+                                                    <td>{{customer.shipping.address_1}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Address #2</th>
+                                                    <td>{{customer.shipping.address_2}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Country</th>
+                                                    <td>{{customer.shipping.country}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>City</th>
+                                                    <td>{{customer.shipping.city}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>State</th>
+                                                    <td>{{customer.shipping.state}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Postcode</th>
+                                                    <td>{{customer.shipping.postcode}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="form-row" *ngIf="!customer">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <input type="button" value="Login" (click)="signin()" class="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 ">
+                    <h3>Your Order</h3>
+                    <div id="order_review " class="w-box ">
+                        <div class="product ">
+                            <div class="row align-items-center ">
+                                <div class="col-12 text-center ">
+                                    <div class="p-img ">
+                                        <img src="../assets/images/RapidStain.png ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="product-name ">Product</th>
+                                    <th class="product-total ">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cart_item" *ngFor="let itemForm of _cartItems.controls;let index = index">
+                                    <td class="product-name " [formGroup]="itemForm">
+                                        Livo Hematology Rapid Stain {{itemForm.controls.volume.value}}&nbsp; <strong class="product-quantity ">×&nbsp;{{itemForm.controls.quantity.value}}</strong>
+                                    </td>
+                                    <td class="product-total " [formGroup]="itemForm">
+                                        <span><span>₹</span>{{itemForm.controls.quantity.value * itemForm.controls.price.value}}
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>GST</th>
+                                    <td data-title="GST">
+                                        <span>₹</span>{{gstValue()}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Shipping</th>
+                                    <td data-title="Shipping">
+                                        Free
+                                    </td>
+                                </tr>
+
+                                <tr class="order-total ">
+                                    <th>Total</th>
+                                    <td><strong><span><span>₹</span>{{itemsTotal()}}</span></strong>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                    <!--<input type="submit" value="Place an order" class="btn btn-primary col">-->
+
+                    <!--<button *ngIf="checkoutCartFormValid" class="btn btn-primary col" type="submit">
+                        <span *ngIf="submitted" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true"></span>
+                        Checkout
+                    </button>-->
+                    <button *ngIf="showCheckout" class="btn btn-primary col" type="submit" [disabled]="disabled? true: null">
+                        <span *ngIf="disabled" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true"></span>
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

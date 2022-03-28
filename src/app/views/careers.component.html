@@ -1,0 +1,83 @@
+<div class="career">
+    <div class="C-banner" style="background-image: url('../../assets/images/career-banner.png')">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-6">
+                    <h2>Ready to join our team?</h2>
+                    <ul class="d-none d-sm-block">
+                        <li>Assume nothing and challenge everything</li>
+                        <li>Each of us can make a difference</li>
+                        <li>Strive to be the best you can be</li>
+                    </ul>
+                    <!--<p>This is an opportunity to surround yourself with smart and ambitious people doing their best
+                        work. Explore what job openings are available today.</p>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="d-block d-sm-none">
+            <li>Assume nothing and challenge everything</li>
+            <li>Each of us can make a difference</li>
+            <li>Strive to be the best you can be</li>
+        </ul>
+        <div class="C-content1">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h3>What we are looking for</h3>
+                    <p>Livo is organized into five distinct professional teams. The horizontal structure that we run encourages continuous collaboration and coordination among teams and team members.</p>
+                    <p class="pb-50">
+                        In making hiring decisions, these are some of the qualities we look for in team members:</p>
+                    <div class="row">
+                        <div class="col-8 col-md-4">
+                            <span class="C-icon1"><i class="fas fa-graduation-cap"></i></span>
+                            <p>Strong academic or industry record</p>
+                        </div>
+                        <div class="col-8 col-md-4">
+                            <span class="C-icon1" style="background: rgba(255, 101, 103, 0.4);"><i
+                                    class="far fa-lightbulb"></i></span>
+                            <p>Quantitative talent and critical thinking skills</p>
+                        </div>
+                        <div class="col-8 col-md-4">
+                            <span class="C-icon1" style="background: rgba(158, 188, 178, 0.5);"><i
+                                    class="fas fa-users"></i></span>
+                            <p>Team player with leadership potential</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="C-content2" id="open_positions">
+            <h3>Our Open Positions</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="C-position" *ngFor="let position of vacancies.slice(0, 3);">
+                        <h4>{{position.title}}</h4>
+                        <p><img src="../../assets/images/head-side-brain.svg">{{position.experience}}</p>
+                        <p><b>Roles and responsibilities</b></p>
+                        <ul>
+                            <li *ngFor="let item of position.description">{{item}}</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="mailto:careers@livo.ai?subject={{position.title}}" class="btn C-SubmitBtn">Submit your CV</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="C-position" *ngFor="let position of vacancies.slice(3, 6);">
+                        <h4>{{position.title}}</h4>
+                        <p><img src="../../assets/images/head-side-brain.svg">{{position.experience}}</p>
+                        <p><b>Roles and responsibilities</b></p>
+                        <ul>
+                            <li *ngFor="let item of position.description">{{item}}</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="mailto:careers@livo.ai?subject={{position.title}}" class="btn C-SubmitBtn">Submit your CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

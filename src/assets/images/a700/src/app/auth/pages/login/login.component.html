@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <div class="logo">
+                <img src="../../../../assets/Logo v1.png" alt="">
+            </div>
+            <div class="title mt-5">
+                <h3>Welcome Back to Bloomia.</h3>
+                <p>Please enter your address and password to login</p>
+            </div>
+            <div class="message text-danger text-center mb-2">
+                {{message}}
+            </div>
+            <form method="POST" [formGroup]="userLogin">
+                <div class="form">
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="text" placeholder="Enter your email address" formControlName="email" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fal fa-envelope"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.email">{{ formErrors.email }}</div>                      
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group1">
+                            <input type="password" placeholder="Enter your password" formControlName="password" class="authinput form-control">
+                        </div>
+                        <div class="input-group-append">
+                            <span><i class="fas fa-lock"></i></span>
+                        </div>
+                        <div class="text-danger errors mx-2" *ngIf="formErrors.password">{{ formErrors.password }}</div>
+                    </div>
+                    <div class="forgot">
+                        <a routerLink="/forget">Forget Your Password?</a>
+                    </div>
+                    <div class="button">
+                        <input type="submit" (click)="submit()" class="submit btn" value="Sign in">
+                    </div>
+                </div>
+            </form>
+            <div class="custom-text">
+                <p>or sign in with</p>
+            </div>
+            <div class="button">
+                <button class="btn googlebtn"><i class="fab fa-google"></i> <span> Signup with google</span></button>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="custom-text bottom">
+                            Don't have an account?<a class="mx-2" routerLink="/signup">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

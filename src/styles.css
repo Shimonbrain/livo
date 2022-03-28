@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+body {
+  background: #fff;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.container-fluid {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.S-box {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 30px 20px;
+  text-align: center;
+  margin: 6px;
+}
+
+.S-icon {
+  padding-bottom: 10px;
+}
+.S-head {
+  font-size: 24px;
+  color: #3e5172;
+  font-family: "Tiempos" !important;
+  padding: 0 10% 10px 10%;
+}
+p {
+  color: #64748f;
+  font-size: 16px;
+  padding: 0 10;
+}
+.P-sec {
+  font-family: "Avenir LT W04_65 Medium1475536" !important;
+  border-top: 1px solid #d8dce3;
+  padding: 25px 0 0 0;
+}
+.P-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center center;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: sub;
+}
+.P-name {
+  font-family: "Avenir LT W04_65 Medium1475536" !important;
+  font-size: 16px;
+  color: #3e5172;
+  text-align: left;
+  display: inline-block;
+  line-height: 20px;
+  text-align: center;
+}
+span {
+  color: #8b97ab;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: #061f4a !important;
+}
+
+.p-carousel-next > span,
+.p-carousel-prev > span {
+  color: #061f4a !important;
+}

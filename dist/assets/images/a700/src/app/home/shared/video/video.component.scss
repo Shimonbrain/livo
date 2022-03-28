@@ -1,0 +1,168 @@
+.heading{
+    position: relative;
+    width: 80%;
+    top: 3.5rem;
+    left: 1.5rem;
+    z-index: 2;
+}
+#myVideo{
+    width: 100%;
+    object-fit: contain;
+    transform: scale(1.8);
+}
+.heading span{
+    padding: 16px 21px;
+    text-align: center;
+    border-radius: .8rem;
+    background: #fff;
+}
+#logo{
+    width: 130px;
+    height: 29px;
+}
+.values{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-135%, -60%);
+}
+#sphere{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #2f45c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+}
+.sphere1{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #2f45c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+  animation: sizechange;
+  animation-timing-function: linear;
+}
+.sphere2{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #2f45c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+  animation: sizechange1;
+  animation-timing-function: linear;
+}
+@keyframes sizechange{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(.8);
+  }
+}
+@keyframes sizechange1{
+  from{
+    transform: scale(.8);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+svg{
+  height: 450px;
+  width: 450px;
+  transform: rotate(270deg);
+}
+.border{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-48%, -52%);
+  border: 0!important;
+}
+.circle1{
+  stroke: #fd7279;
+  stroke-width: 12;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 1256;
+  animation: circlering;
+  transition: 0s;
+  animation-timing-function: linear;
+}
+.circle2{
+  stroke: #fd7279;
+  stroke-width: 12;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 1256;
+  animation: circlering1;
+  transition: 0s;
+  animation-timing-function: linear;
+}
+span{
+  padding: 25px;
+}
+@keyframes circlering{
+  from{
+    stroke-dashoffset: 1256;
+  }
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes circlering1{
+  from{
+    stroke-dashoffset: 1256;
+  }
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+@-moz-keyframes circlering{
+  from{
+    stroke-dashoffset: 1256;
+  }
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes circlering{
+  from{
+    stroke-dashoffset: 1256;
+  }
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes circlering{
+  from{
+    stroke-dashoffset: 1256;
+  }
+  to{
+    stroke-dashoffset: 0;
+  }
+}

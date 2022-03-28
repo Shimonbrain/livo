@@ -1,0 +1,126 @@
+.AddtoCart {
+    padding-top: 80px;
+    .AC-content1 {
+        padding-bottom: 80px;
+        .AC-icons {
+            position: relative;
+            text-align: center;
+            .E-icon {
+                display: inline-block;
+                text-align: center;
+                padding: 0 20px;
+                .E-name {
+                    padding: 10px 0;
+                    font-size: 14px;
+                    color: #3E5172;
+                }
+            }
+        }
+        .P-name {
+            font-size: 46px;
+            color: #FF6567;
+            .select {
+                font-size: 16px;
+                color: #061F4A;
+                background-color: transparent;
+                border: 0px;
+                margin-left: 10px;
+            }
+        }
+        .price {
+            font-size: 22px;
+            color: rgba(62, 81, 114, 0.8);
+        }
+        .details {
+            border-top: 1px solid #E3E6EB;
+            border-bottom: 1px solid #E3E6EB;
+            padding: 15px 0;
+            table {
+                font-size: 14px;
+                color: #3E5172;
+                margin: 0px;
+                .head {
+                    font-family: "Avenir LT W04_95 Black1475560";
+                    font-size: 14px;
+                    color: #061F4A;
+                }
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+        .Review-btn {
+            width: 100%;
+            font-size: 14px;
+            color: #fff;
+            background: #ACB5C3;
+            border-radius: 4px;
+        }
+    }
+    .buybtn {
+        background-color: #0870CD;
+        border-color: #0870CD;
+        color: #fff;
+        line-height: 1;
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+    .AC-content2 {
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 80px 50px 60px 50px;
+        h3 {
+            color: #061F4A;
+            font-size: 40px;
+            font-family: "Tiempos";
+            text-align: center;
+            letter-spacing: -1px;
+            padding-bottom: 60px;
+        }
+        .Recom-product {
+            display: inline-block;
+            padding: 0 40px;
+            margin-bottom: 20px;
+            .P-img {
+                height: 210px;
+            }
+            .P-name {
+                font-size: 24px;
+                color: #061F4A;
+                padding-bottom: 3px;
+            }
+            .P-price {
+                font-size: 16px;
+                color: #3E5172;
+                padding-bottom: 10px;
+            }
+        }
+        .learmore {
+            font-size: 14px;
+            color: #0870CD;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-transition-duration: 0.1s;
+            transition-duration: 0.1s;
+            text-decoration: none;
+            i {
+                font-size: 11px;
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-transition-duration: 0.1s;
+                transition-duration: 0.1s;
+                -webkit-transition-property: transform;
+                transition-property: transform;
+                -webkit-transition-timing-function: ease-out;
+                transition-timing-function: ease-out;
+            }
+            &:hover {
+                i {
+                    -webkit-transform: translateX(4px);
+                    transform: translateX(4px);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,264 @@
+<div class="container" *ngIf="!is_logged_in" style="min-height: 500px;">
+    <div class="mt-5">
+        <div class="row">
+            <div class="col-6">
+                <h3>Sign in</h3>
+                <form [formGroup]="loginForm" (submit)="signin()" autocomplete="off">
+                    <div class="w-box">
+                        <div class="form-row" *ngIf="loginErrors">
+                            <div class="col">
+                                <div class="alert alert-danger">{{loginErrorMessage}}</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group" [ngClass]="{ 'is-invalid': submitted && loginControls.email.errors }">
+                                    <label for="email">Email</label>
+                                    <input id="email" formControlName="email" type="text" class="form-control">
+
+                                    <div class="invalid-feedback" *ngIf="submitted && loginControls.email.errors">
+                                        <div *ngIf="loginControls.email.errors.required">
+                                            Please enter email
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group" [ngClass]="{ 'is-invalid': submitted && loginControls.password.errors }">
+                                    <label for="password">Password</label>
+                                    <input id="password" formControlName="password" type="password" class="form-control">
+                                    <div class="invalid-feedback" *ngIf="submitted && loginControls.password.errors">
+                                        <div *ngIf="loginControls.password.errors.required">
+                                            Please enter password
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="is_logged_in">
+    <div id="myaccount" class="mat-typography">
+        <div class="container mt-2">
+            <div class='row' *ngIf="order_status && !customer">
+                <div class="col">
+                    <div class="alert alert-info">{{order_status}}</div>
+                </div>
+            </div>
+            <div class='row' *ngIf="payment">
+                <div class="col">
+                    <div *ngIf="payment.status == 'success'" class="alert alert-success">Your order payment done
+                        successfully. For your reference <b>PaymentID: {{payment.paymentId}}</b></div>
+                    <div *ngIf="payment.status == 'failure'" class="alert alert-danger">Your order payment failed</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3>Account information</h3>
+                        </div>
+                        <div *ngIf="customer"> <span class="logout" (click)="logout()">logout</span></div>
+                    </div>
+                    <div class="row">
+                        <mat-card class="billing-address">
+                            <mat-card-header>
+                                <mat-card-title>Billing Address</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <table class="table table-sm">
+                                    <tr>
+                                        <th class="col-4">First name</th>
+                                        <td class="co-8">{{currentUser?.billing.first_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Last name</th>
+                                        <td>{{currentUser?.billing.last_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Email</th>
+                                        <td>{{currentUser?.billing.email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Phone</th>
+                                        <td>{{currentUser?.billing.phone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Address #1</th>
+                                        <td>{{currentUser?.billing.address_1}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Address #2</th>
+                                        <td>{{currentUser?.billing.address_2}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Country</th>
+                                        <td>{{currentUser?.billing.country}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">City</th>
+                                        <td>{{currentUser?.billing.city}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">State</th>
+                                        <td>{{currentUser?.billing.state}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Postcode</th>
+                                        <td>{{currentUser?.billing.postcode}}</td>
+                                    </tr>
+                                </table>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div class="row mt-2">
+                        <mat-card class="Shipping-address">
+                            <mat-card-header>
+                                <mat-card-title>Shipping Address</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <table class="table table-sm table-striped">
+                                    <tr>
+                                        <th class="col-4">First name</th>
+                                        <td>{{currentUser?.shipping.first_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Last name</th>
+                                        <td>{{currentUser?.shipping.last_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Address #1</th>
+                                        <td>{{currentUser?.shipping.address_1}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Address #2</th>
+                                        <td>{{currentUser?.shipping.address_2}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Country</th>
+                                        <td>{{currentUser?.shipping.country}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">City</th>
+                                        <td>{{currentUser?.shipping.city}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">State</th>
+                                        <td>{{currentUser?.shipping.state}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="col-4">Postcode</th>
+                                        <td>{{currentUser?.shipping.postcode}}</td>
+                                    </tr>
+                                </table>
+                            </mat-card-content>
+                        </mat-card>
+
+                    </div>
+                </div>
+                <div class='col-8'>
+                    <h3>Orders</h3>
+                    <div class="mat-elevation-z8">
+                        <table mat-table [dataSource]="orderSource" multiTemplateDataRows class="mat-elevation-z8" matSortDisableClear>
+                            <ng-container matColumnDef="order_id">
+                                <th mat-header-cell *matHeaderCellDef>Order Number</th>
+                                <td mat-cell *matCellDef="let order">{{order.order_id}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="created_at">
+                                <th mat-header-cell *matHeaderCellDef>Order Date</th>
+                                <td mat-cell *matCellDef="let order">{{order.created_at | date: 'dd/MM/yyyy HH:mm'}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="status">
+                                <th mat-header-cell *matHeaderCellDef>Order Status</th>
+                                <td mat-cell *matCellDef="let order"><span
+                                        class="badge bg-{{order.status}}">{{order.status}}</span></td>
+                            </ng-container>
+                            <ng-container matColumnDef="amount">
+                                <th mat-header-cell *matHeaderCellDef>Total Amount</th>
+                                <td mat-cell *matCellDef="let order">{{order.amount}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="actions">
+                                <th mat-header-cell *matHeaderCellDef> Action</th>
+                                <td mat-cell *matCellDef="let order">
+                                    <div style="display: flex;" *ngIf="order.status != 'cancelled' && !order.status.startsWith('refund')">
+                                        <button class="btn btn-sm btn-success" (click)="onPayment(order)"
+                                            *ngIf="order.status != 'captured'">{{order.status
+                                            == 'failed' ? 'Retry' : 'Pay Now'}}</button>
+                                        <button class="btn btn-sm btn-danger"
+                                            [ngClass]="order.status != 'captured' ? 'ml-2':''"
+                                            (click)="cancelOrder(order)">Cancel</button>
+                                    </div>
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="expandedDetail">
+                                <td mat-cell *matCellDef="let element" [attr.colspan]="orderColumns.length">
+                                    <div class="example-element-detail"
+                                        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                                        <div class="product-image">
+                                            <img src="../../assets/images/RapidStain.png" alt="Rapid Statin" width="75px"
+                                                height="93px" />
+                                        </div>
+                                        <div class="item-details table-responsive">
+                                            <table class="table" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="product-name">SKU</th>
+                                                        <th class="product-name">Product</th>
+                                                        <th class="product-price">Price</th>
+                                                        <th class="product-subtotal">Sub Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let item of element.line_items;let index = index">
+                                                        <td>{{item.sku}}</td>
+                                                        <td class="product-name">{{item.name}} x <b>{{item.quantity}}</b>
+                                                        </td>
+                                                        <td class="product-price"><span><span>₹</span>{{item.price}}</span>
+                                                        </td>
+                                                        <td class="product-subtotal">
+                                                            <span><span>₹</span>{{item.subtotal}}</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="orderColumns"></tr>
+                            <tr mat-row *matRowDef="let element; columns: orderColumns;" 
+                                (click)="expandedElement = expandedElement === element ? null: element">
+                            </tr>
+                            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+                        </table>
+                        <div class="spinner-container">
+                            <mat-spinner [diameter]="40" *ngIf="orderSource.loading$ | async"></mat-spinner>
+                        </div>
+                        <div class="mat-table__bottom mat-table__bottom--padding">
+                            <mat-paginator *ngIf="is_logged_in" [length]="orderSource.paginatorTotal$ | async" [pageSize]="10"
+                                aria-label="Orders">
+                            </mat-paginator>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

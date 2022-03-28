@@ -1,0 +1,234 @@
+<div class="container mt-5">
+    <div class="header">
+        <div class="d-flex">
+            <div class="heading d-flex">
+                <h5>Kegel Exercise</h5>
+                <span class="mx-2 round-icon"><i class="far fa-question-circle fa-sm"></i></span>
+            </div>
+            <div class="icons d-flex ms-auto">
+                <div class="me-2 round-buttons specialButtonActive">w</div>
+                <div class="me-2 round-buttons specialButton"><i class="fas fa-fill-drip fa-sm"></i></div>
+                <div class="me-2 round-buttons specialButton"><i class="fas fa-volume-up fa-sm"></i></div>
+            </div>
+        </div>
+        <div class="dropdown mb-2">
+            <span type="button" id="dropdownMenuItem" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            class="dropdown-toggle h4 m-0">{{selectedExercise}}</span>
+            <div aria-labelledby="dropdownMenuButton" style="position: absolute; will-change: transform;
+            top: 0; left: 0; transform: translate3d(-70px, 42px, 0px);" class="dropdown-menu exercise-selector">
+            <span *ngFor="let exercise of exercises" (click)="changeExercise(exercise)" class="dropdown-item exercise">{{exercise}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="configuration p-3">
+        <div class="long">
+            <div class="squeeze">
+                <span>Long Squeeze</span>
+            </div>
+            <div class="timers row mt-2">
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26">
+                    {{longSqueezeValue}}
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(1, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{longRestValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(2, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{longRepsValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(3, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="longsqueeze row">
+                <div class="col-md-4 squeezeseconds">
+                    <p>Squeeze Seconds</p>
+                </div>
+                <div class="col-md-4 restseconds">
+                    <p>Rest Seconds</p>
+                </div>
+                <div class="col-md-4 reps">
+                    <p>Reps</p>
+                </div>
+            </div>
+        </div>
+        <div class="short">
+            <div class="squeeze">
+                <span>Short Squeeze</span>
+            </div>
+            <div class="timers row mt-2">
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{shortSqueezeValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(4, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{shortRestValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(5, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{shortRepsValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(6, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="longsqueeze row">
+                <div class="col-md-4 squeezeseconds">
+                    <p>Squeeze Seconds</p>
+                </div>
+                <div class="col-md-4 restseconds">
+                    <p>Rest Seconds</p>
+                </div>
+                <div class="col-md-4 reps">
+                    <p>Reps</p>
+                </div>
+            </div>
+        </div>
+        <div class="short">
+            <div class="squeeze kegel d-flex">
+                <span [ngClass]="{'reverseKegelActive': reverseKegelActive}">Reverse Kegel Exercise</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" (click)="reverseKegel()" type="checkbox" id="flexSwitchCheckDefault">
+                </div>
+            </div>
+            <div class="timers row mt-2">
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26"
+                    [ngClass]="{'reverseKegelActive': reverseKegelActive}">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{rkSqueezeValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(7, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26"
+                    [ngClass]="{'reverseKegelActive': reverseKegelActive}">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{rkRestValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(8, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button aria-haspopup="listbox" data-bs-toggle="dropdown" role="combobox" aria-expanded="false" aria-owns="bs-select-10"
+                    class="btn btn-light timings-select" data-id title="26"
+                    [ngClass]="{'reverseKegelActive': reverseKegelActive}">
+                        <div class="filter-option">
+                            <div class="filter-option-inner">
+                                <div class="filter-option-inner-inner">{{rkRepsValue}}</div>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu timings" style="max-width: 200px;">
+                        <div>
+                            <ul *ngFor="let value of values">
+                                <li class="mr-2"><a class="dropdown-item" (click)="changeValue(9, value)"><span>{{value}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="longsqueeze row">
+                <div class="col-md-4 squeezeseconds">
+                    <p [ngClass]="{'reverseKegelActive': reverseKegelActive}">Squeeze Seconds</p>
+                </div>
+                <div class="col-md-4 restseconds">
+                    <p [ngClass]="{'reverseKegelActive': reverseKegelActive}">Rest Seconds</p>
+                </div>
+                <div class="col-md-4 reps">
+                    <p [ngClass]="{'reverseKegelActive': reverseKegelActive}">Reps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

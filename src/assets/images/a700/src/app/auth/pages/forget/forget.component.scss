@@ -1,0 +1,97 @@
+.container{
+    background-color: #fff;
+    font-size: 1rem;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 200px;
+}
+.body{
+    width: 70%;
+    margin: auto;
+    margin-top: 7rem;
+}
+.title h3{
+    display: flex;
+    justify-content: center;
+    font-family: "riffic";
+}
+.title p{
+    display: flex;
+    justify-content: center;
+    font-family: "gillroy-medium";
+    color: #979797;
+    font-size: 16px;
+}
+.input-group{
+    display: inline-block;
+    width: 90%;
+}
+.authinput{
+    width: 100%;
+    background-color: #ebebeb;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.authinput:focus{
+    outline: none;
+}
+.input-group-append{
+    display: inline-block;
+    text-align: center;
+    width: 10%;
+    height: 100%;
+    padding: 6px;
+    background-color: #ebebeb;
+    border: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+::placeholder{
+    color: black;
+    font-weight: 600;
+}
+.button{
+    width: 100%;
+    font-family: "gillroy-semi";
+}
+.signinbtn{
+    background-color: rgb(47, 69, 197);
+    color: #fff;
+    align-items: center;
+    margin-top: 16px;
+    font-size: 15px;
+    border-radius: 8px;
+    width: 100%;
+}
+.custom-text{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #979797;
+    font-size: 13px;
+    font-weight: 400;
+}
+.bottom{
+    position: fixed;
+    align-items: center;
+    margin-top: 9rem;
+    color: #979797;
+    font-size: 16px;
+    font-weight: 400;
+}
+.bottom a{
+    text-decoration: none;
+    color: #000;
+}
+.errors{
+    font-size:12px;
+}

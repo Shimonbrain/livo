@@ -1,0 +1,46 @@
+/*@import url("https://fast.fonts.net/lt/1.css?apiType=css&c=60bfdfdd-3edf-4367-ad93-f9d777d6b4f8&fontids=1475512,1475536,1475560");*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+@font-face {
+    font-family: "Avenir LT W04_45 Book1475512";
+    src: url("../fonts/1475512/fe2d00d9-aadd-40f7-a144-22a6f695aa8f.woff2") format("woff2"), url("../fonts/1475512/c3795fc9-e264-4795-9a19-b57086aa6f7b.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Avenir LT W04_65 Medium1475536";
+    src: url("../fonts/1475536/7839a002-2019-46e4-8db8-c8335356ceee.woff2") format("woff2"), url("../fonts/1475536/28433854-a1b7-4a30-b6a4-10c3a5c75494.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Avenir LT W04_95 Black1475560";
+    src: url("../fonts/1475560/ef5800d8-b76d-43e8-87ff-81d455db24c0.woff2") format("woff2"), url("../fonts/1475560/1144e594-fd94-44b6-9cf8-171075a034cc.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Tiempos";
+    src: url("../fonts/tiempos-headline-web-medium.woff2") format("woff2"), url("../fonts/tiempos-headline-web-medium.woff2") format("woff");
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga';
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,119 @@
+.Contact {
+	.C-banner {
+		height: 400px;
+		background-size: cover;
+		background-position: bottom center;
+		margin-bottom: 50px;
+		
+	}
+	h2 {
+		color: #061F4A;
+		font-size: 32px;
+		font-family: "Tiempos";
+		letter-spacing: -1px;
+		padding-bottom: 15px;
+		padding-top: 100px;
+	}
+	p {
+		color: #3E5172;
+		font-size: 16px;
+	}
+	.C-content1 {
+		padding: 0px 0 50px 0;
+		.CC-box1 {
+			background: #FFFFFF;
+			border-radius: 4px;
+			padding: 60px;
+			.CCT1 {
+				font-size: 24px;
+				color: #061F4A;
+				padding-bottom: 10px;
+			}
+			.CC-btn {
+				border: 1px solid rgba(62, 81, 114, 0.2);
+				font-size: 16px;
+				color: #061F4A;
+				width: 100%;
+				margin-bottom: 15px;
+				height: 50px;
+				i {
+					display: none;
+				}
+			}
+			.CC-btn.active {
+				background: rgba(8, 112, 205, 0.08);
+				border-color: rgba(8, 112, 205, 0.08);
+				i {
+					color: #0870CD;
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.C-field {
+		padding-bottom: 20px;
+		.C-icon {
+			display: inline-block;
+			margin-right: 15px;
+			width: 30px;
+			i {
+				font-size: 22px;
+				color: #061F4A;
+			}
+		}
+		input {
+			border: 0px;
+			border-bottom: 1px solid #E3E6EB;
+			font-size: 18px;
+			width: calc(100% - 55px);
+			outline: none;
+			color: #061F4A;
+			padding: 4px 0;
+		}
+		select {
+			border: 0px;
+			border-bottom: 1px solid #E3E6EB;
+			font-size: 18px;
+			width: calc(100% - 55px);
+			outline: none;
+			color: #061F4A;
+			padding: 4px 0;
+		}
+		textarea {
+			border: 0px;
+			border-bottom: 1px solid #E3E6EB;
+			font-size: 18px;
+			width: calc(100% - 55px);
+			outline: none;
+			color: #061F4A;
+			padding: 4px 0;
+		}
+		&::placeholder {
+			color: #061f4a82;
+		}
+	}
+	.CF-btn {
+		background-color: #0870CD;
+		border-color: #0870CD;
+		color: #fff;
+		font-size: 18px;
+		padding: 6px 20px;
+	}
+}
+@media only screen and (max-width: 767px) { 
+	.Contact .C-banner {
+		height: 170px;
+	}
+	.Contact h2 {
+		text-align: center;
+		padding-top: 0px;
+	}
+	.Contact p {
+		text-align: center;
+	}
+	.Contact .C-content1 .CC-box1 {
+		padding: 60px 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+	}
+}

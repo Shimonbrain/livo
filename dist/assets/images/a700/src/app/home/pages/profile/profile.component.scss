@@ -1,0 +1,137 @@
+.imageavatar{
+    position: relative;
+    display: inline-block;
+}
+.imageavatar img{
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+}
+.upload{
+    background-color: #ebebfc;;
+}
+.remove{
+    font-size: 12px;
+    cursor: pointer;
+}
+.dialog{
+    position: absolute;
+    display: block;
+    top: 80px;
+    right: 50px;
+    background-color: #fff;
+    border-radius: 60px;
+    height: 320px;
+    width: 350px;
+    z-index: 100;
+    box-shadow: 0px 0px 5px 2px rgba(165,163,163,.5607843137254902);
+}
+.dropdown-menu{
+    position: relative;
+    display: inline;
+    top: 25px;
+    border: none;
+}
+.dropdown-menu h5{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+}
+.crop{
+    height: 200px;
+}
+.dialog-buttons{
+    display: flex;
+    justify-content: center;
+}
+.dialog-buttons button{
+    background-color: #2f45c5;
+    color: #fff;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.showCropped{
+    display: flex;
+    flex-direction: column;
+}
+.mainImage{
+    height: 200px;
+    margin-left: 71px;
+}
+.editicon{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+label{
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.width-fit-content{
+    width: fit-content;
+}
+.round-buttons{
+    height: 36px;
+    width: 36px;
+    padding: 2px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.round-buttons-border{
+    border: 1px solid #2f45c5;
+    color: #2f45c5;
+}
+.round-buttons-sm{
+    display: block;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+.round-buttons-cancel{
+    border: 1px solid #2f45c5;
+}
+.bg-blue{
+    background-color: #2f45c5;
+}
+.bg-grey{
+    background-color: #ebebfc;
+}
+input{
+    background-color: #e2e2e2;
+    font-weight: 600;
+    border: 1px solid #ced4da;
+    border-radius: .8rem;
+}
+input:focus{
+    background-color: #e2e2e2;
+    box-shadow: none;
+    outline: 0;
+    border: 0;
+}
+.errors{
+    font-size: 14px;
+}
+.form-group{
+    font-family: "gillroy-semi";
+    margin-bottom: 1rem         ;
+}
+.form-control{
+    width: 92%;
+}
+.heading{
+    margin-bottom: 1rem;
+}
+.custom-button-signup{
+    border-radius: 10px;
+    background-color: #2f45c5;
+    font-size: .8rem;
+}

@@ -1,0 +1,7 @@
+<div class="rapid-statin-clients">
+    <div  *ngFor="let row_images of clients_logos">
+        <span  *ngFor="let image of row_images">
+            <img [src]="image.src" />
+        </span>
+    </div>
+</div>

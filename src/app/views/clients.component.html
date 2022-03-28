@@ -1,0 +1,93 @@
+<div class="Clients">
+    <div class="Client-banner">
+        <img src="../../assets/images/client-banner.png">
+    </div>
+    <div class="C-logos">
+        <div class="container">
+            <h2>Our Clients</h2>
+
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-10">
+                    <clients-image></clients-image>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="C-sec2">
+        <div class="container d-block d-sm-none ">
+            <h2>Here’s what our clients say about us.</h2>
+            <div class="Stories">
+                <div class="row no-gutters">
+                    <div class="col-md-4" *ngFor="let data of testimonials">
+                        <div class="S-box">
+                            <div class="S-icon">
+                                <img src="../../assets/images/quote.svg">
+                            </div>
+                            <div class="S-head">{{data.title}}</div>
+                            <p>{{data.description}}</p>
+                            <div class="P-sec">
+                                <div class="P-img"
+                                    style="background-image: url('../../assets/images/client-img1.png');"></div>
+                                <div class="P-name">
+                                    {{data.name}}<br>
+                                    <span>{{wrapText(data.role)}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-none d-sm-block">
+            <h2>Here’s what our clients say about us.</h2>
+            <div class="Stories">
+                <p-carousel [value]="testimonials" [circular]="true" [autoplayInterval]="3000"
+                    [responsiveOptions]="responsiveOptions">
+                    <ng-template let-testimonial pTemplate="item">
+                        <div class="S-box">
+                            <div class="S-icon">
+                                <img src="../../assets/images/quote.svg">
+                            </div>
+                            <div class="S-head">{{testimonial.title}}</div>
+                            <p class="S-description">{{testimonial.description}}</p>
+                            <div class="P-sec">
+                                <div class="P-name">
+                                    {{testimonial.name}}<br>
+                                    <span>{{wrapText(testimonial.role)}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+
+            <!--<h2>Stories from our Customers</h2>-->
+            <!--<div class="CS2-text1">Here’s what our customers think about us.</div>-->
+            <!-- <div class="Stories">
+                <div class="row no-gutters">
+                    <div class="col-md-4" *ngFor="let testimonial of testimonials">
+                        <div class="row no-gutters" *ngFor="let data of testimonial">
+                            <div class="col-md-12">
+                                <div class="S-box">
+                                    <div class="S-icon">
+                                        <img src="../../assets/images/quote.svg">
+                                    </div>
+                                    <div class="S-head">{{data.title}}</div>
+                                    <p>{{data.description}}</p>
+                                    <div class="P-sec">
+                                        <div class="P-img"
+                                            style="background-image: url('../../assets/images/client-img1.png');"></div>
+                                        <div class="P-name">
+                                            {{data.name}}<br>
+                                            <span>{{wrapText(data.role)}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,229 @@
+/*----- TIMELINE ITEM -----*/
+/*----- TIMELINE INFO -----*/
+/*----- TIMELINE MARKER -----*/
+/*----- TIMELINE CONTENT -----*/
+.Roadmap {
+	.R-banner {
+		height: 400px;
+		background-size: cover;
+		background-position: center center;
+		margin-bottom: 50px;
+		background-image: url("../../assets/images/Roadmap-banner.png");
+	}
+	h2 {
+		color: #061F4A;
+		font-size: 32px;
+		font-family: "Tiempos";
+		letter-spacing: -1px;
+		padding-bottom: 15px;
+	}
+	.RT1 {
+		font-size: 24px;
+		color: #061F4A;
+		padding-bottom: 50px;
+	}
+	p {
+		font-size: 16px;
+		color: #061F4A;
+	}
+	.R-content1 {
+		background-image: url(../../assets/images/Roadmap-img1.png);
+		min-height: 300px;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		padding-top: 100px;
+		margin-bottom: 60px;
+		margin-top: 60px;
+		h3 {
+			color: #061F4A;
+			font-size: 32px;
+			font-family: "Tiempos";
+			letter-spacing: -1px;
+			padding-bottom: 15px;
+		}
+		.link {
+			color: #0870CD;
+			font-size: 14px;
+			i {
+				font-size: 11px;
+			}
+		}
+	}
+}
+.timeline {
+	line-height: 1.4em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.timeline-item {
+	padding-left: 40px;
+	position: relative;
+	&:last-child {
+		padding-bottom: 0;
+		.timeline-marker {
+			&:after {
+				content: none;
+			}
+		}
+	}
+}
+.timeline-info {
+	margin: 0 0 0.5em 0;
+	white-space: nowrap;
+	font-size: 16px;
+	color: #3E5172;
+	span {
+		font-size: 24px;
+		color: #3E5172;
+		letter-spacing: -1px;
+	}
+}
+.timeline-marker {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 15px;
+	&:before {
+		background: #FF6B6B;
+		border: 3px solid transparent;
+		border-radius: 100%;
+		content: "";
+		display: block;
+		height: 15px;
+		position: absolute;
+		top: 4px;
+		left: 0;
+		width: 15px;
+		transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+	}
+	&:after {
+		content: "";
+		border-left: 2px dashed #FF6567;
+		display: block;
+		position: absolute;
+		top: 24px;
+		bottom: 0;
+		left: 6px;
+	}
+}
+.timeline-title {
+	font-size: 16px;
+	color: #0870CD;
+	letter-spacing: -1px;
+	span {
+		color: #FF6567;
+	}
+}
+.timeline-content {
+	padding-bottom: 40px;
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	ul {
+		padding: 0 0 0 20px;
+		li {
+			list-style: disc;
+			font-size: 16px;
+			color: #061F4A;
+			line-height: 34px;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.timeline-split {
+		.timeline {
+			display: table;
+		}
+		.timeline-item {
+			display: table-row;
+			padding: 0;
+		}
+		.timeline-info {
+			display: table-cell;
+			vertical-align: top;
+			padding-right: 30px;
+		}
+		.timeline-marker {
+			display: table-cell;
+			vertical-align: top;
+			position: relative;
+		}
+		.timeline-content {
+			display: table-cell;
+			vertical-align: top;
+			padding-left: 30px;
+		}
+		.period {
+			.timeline-info {
+				display: table-cell;
+				vertical-align: top;
+			}
+			.timeline-title {
+				position: relative;
+				left: -45px;
+			}
+		}
+	}
+	.timeline-centered {
+		.timeline {
+			display: table;
+		}
+		.timeline-item {
+			display: table-row;
+			padding: 0;
+		}
+		.timeline-info {
+			display: table-cell;
+			vertical-align: top;
+			padding-right: 30px;
+		}
+		.timeline-marker {
+			display: table-cell;
+			vertical-align: top;
+			position: relative;
+		}
+		.timeline-content {
+			display: table-cell;
+			vertical-align: top;
+			padding-left: 30px;
+		}
+		.period {
+			.timeline-title {
+				position: relative;
+				left: -45px;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	
+	.Roadmap .R-banner {
+		height: 120px;
+	}
+	.Roadmap .RT1 {
+		font-size: 20px;
+		text-align: center;
+	}
+	.Roadmap h2, .Roadmap p {
+		text-align: center;
+	}
+	.Roadmap .R-content1 {
+		background-image: url(../../assets/images/Roadmap-img2.jpg);
+		min-height: 400px;
+		padding-top: 30px;
+		margin-bottom: 60px;
+		margin-top: 60px;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 800px) and (min-width: 768px) {
+	.Roadmap .R-banner {
+		height: 300px;
+	}
+}

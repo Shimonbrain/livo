@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col">
+        <h3>Sign in</h3>
+        <form [formGroup]="loginForm" (submit)="signin()" autocomplete="off">
+            <div class="w-box">
+                <div class="form-row" *ngIf="loginErrors">
+                    <div class="col">
+                        <div class="alert alert-danger">{{loginErrorMessage}}</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && loginControls.email.errors }">
+                            <label for="email">Email</label>
+                            <input id="email" formControlName="email" type="text" class="form-control">
+
+                            <div class="invalid-feedback" *ngIf="submitted && loginControls.email.errors">
+                                <div *ngIf="loginControls.email.errors.required">
+                                    Please enter email
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && loginControls.password.errors }">
+                            <label for="password">Password</label>
+                            <input id="password" formControlName="password" type="password" class="form-control">
+                            <div class="invalid-feedback" *ngIf="submitted && loginControls.password.errors">
+                                <div *ngIf="loginControls.password.errors.required">
+                                    Please enter password
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
